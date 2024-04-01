@@ -1,98 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Consent in iframe POC</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-</style>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  
-<!-- OneTrust Cookies Consent Notice start for apc.com -->
-<!-- <script type="text/javascript" src="https://cdn.cookielaw.org/consent/bdffc533-f7dd-4d85-bbc5-d9975586a174-test/OtAutoBlock.js" ></script> -->
-
-<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="bdffc533-f7dd-4d85-bbc5-d9975586a174-test" ></script>
-
-<script type="text/javascript">
-  function OptanonWrapper() { }
-</script>
-
-
-<!-- OneTrust Cookies Consent Notice end for apc.com -->
-  
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WT6TJK59');</script>
-<!-- End Google Tag Manager -->
-  
-</head>
-  
-<body>
-  
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT6TJK59"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  
-    <!-- The Tour Section -->
-    <div class="w3-black" id="iframeparent">
-      <div class="w3-container w3-content">
-        <h3 class="w3-wide w3-center">Consent values are shared with iframe</h3>
-        <iframe src="https://anupam-se.github.io/consent-handler" style="border:0px #ffffff none;" width="900px" height="500px" name="myiFrame"></iframe>
+  <head>
+    <title>Consent in iframe POC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+    <!-- OneTrust Cookies Consent Notice start for apc.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="bdffc533-f7dd-4d85-bbc5-d9975586a174-test" ></script>
+    <script type="text/javascript">
+      function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for apc.com -->
+      
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WT6TJK59');</script>
+    <!-- End Google Tag Manager -->
+    
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT6TJK59"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+      <!-- The iframe Section -->
+      <div class="w3-black" id="iframeparent">
+        <div class="w3-container w3-content w3-padding-64">
+          <h3 class="w3-wide w3-center">Consent values are shared with iframe</h3>
+          <iframe src="https://anupam-se.github.io/consent-handler" style="border:0px #ffffff none;" width="900px" height="500px" name="myiFrame"></iframe>
+        </div>
       </div>
-    </div>
+    
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+      <!-- OneTrust Cookies Settings link start -->
+      <a title="Cookies" class="ot-sdk-show-settings">Change your cookie settings</a>
+      <!-- OneTrust Cookies Settings link end --> 
+    </footer>
   
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-    <!-- OneTrust Cookies Settings link start -->
-    <a title="Cookies" class="ot-sdk-show-settings">Change your cookie settings</a>
-    <!-- OneTrust Cookies Settings link end --> 
-  </footer>
-  
-  <script>
-  // Automatic Slideshow - change image every 4 seconds
-  var myIndex = 0;
-  carousel();
-  
-  function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 4000);    
-  }
-  
-  // Used to toggle the menu on small screens when clicking on the menu button
-  function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else { 
-      x.className = x.className.replace(" w3-show", "");
-    }
-  }
-  
-  // When the user clicks anywhere outside of the modal, close it
-  var modal = document.getElementById('ticketModal');
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-  </script>
-
-</body>
+  </body>
 </html>
