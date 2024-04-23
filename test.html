@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tracking GA4 Events in iframe POC | Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+    <!-- OneTrust Cookies Consent Notice start for apc.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="bdffc533-f7dd-4d85-bbc5-d9975586a174-test"></script>
+    <script type="text/javascript"> function OptanonWrapper(){}</script>
+    <!-- OneTrust Cookies Consent Notice end for apc.com -->
+      
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WT6TJK59');</script>
+    <!-- End Google Tag Manager -->
+    
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT6TJK59"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Main Content Section -->
+    <div class="w3-light-gray w3-container" id="iframeparent">
+      <div class="w3-container w3-content">
+        <h1 class="w3-center w3-padding-16">Tracking GA4 Events in iframes</h1>
+        <p>Notice a slight delay in iframe load? That's intentional</p>
+        <p>The postMessage listener must always fire before the iframe is loaded - the delay helps to ensure that the listener is active </p>
+        <p>The delay can be added either through iframe or directly in the parent GTM like in this case the added delay is 0.5 seconds</p>
+        <br><p>If the iframe is hosted on a different domain - use the postMessage API to populate the event on the parent window.</p>
+        <iframe src="" style="border:0px #ffffff none;" width="100%" height="370px" id="myiFrame2" name="myiFrame2"></iframe>
+        <p>Google Analytics Tags will fire depending on the cookie settings selected for the parent website.</p>
+        <p>Also the automatic events (first_visit, session_start, user_engagement, scroll, etc.) will not trigger if iframe is not hosted on the same domain. Google API does not allow cross</p>
+      </div>
+    </div>
+
+    <footer class="w3-container w3-center w3-opacity w3-dark-grey">
+      <!-- OneTrust Cookies Settings link start -->
+      <a title="Cookies" class="ot-sdk-show-settings w3-btn w3-black">Change your cookie settings</a>
+      <!-- OneTrust Cookies Settings link end --> 
+    </footer>
+    
+    <script>
+    window.onload = function(){
+    	setTimeout(function(){
+        document.getElementById('myiFrame2').src = 'https://anupam9261.github.io/iframe-crossdomain-tracking/';
+    	},500);
+    };
+    </script>
+  </body>
+</html>
